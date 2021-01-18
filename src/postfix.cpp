@@ -42,6 +42,7 @@ std::string infix2postfix(std::string infix) {
             }
             operators.push(*it);
         } else if (*it == '.') {
+            prefix.pop_back();
             prefix += *it;
         } else if (*it != ' ') {
             prefix += *it;
