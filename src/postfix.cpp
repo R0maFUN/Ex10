@@ -48,7 +48,6 @@ std::string infix2postfix(std::string infix) {
             prefix += *it;
             prefix += ' ';
         }
-        
     }
     while (!operators.isEmpty()) {
         prefix += operators.pop();
