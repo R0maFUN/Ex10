@@ -6,4 +6,4 @@
 #include <unordered_map>
 #include "MyStack.h"
 
-std::string infix2prefix(std::string infix);
+std::string infix2postfix(std::string infix);

@@ -3,14 +3,14 @@
 #include "postfix.h"
 #include <iostream>
 
-std::string infix2prefix(std::string infix) {
+std::string infix2postfix(std::string infix) {
     std::unordered_map<char, int> priorities({ 
-            {'(', 0}, 
-            {')', 1}, 
-            {'+', 2}, 
-            {'-', 2}, 
-            {'*', 3}, 
-            {'/', 3} 
+            {'(', 0},
+            {')', 1},
+            {'+', 2},
+            {'-', 2},
+            {'*', 3},
+            {'/', 3}
         });
     std::string prefix;
     MyStack<char> operators(200);
@@ -41,8 +41,7 @@ std::string infix2prefix(std::string infix) {
                 prefix += ' ';
             }
             operators.push(*it);
-        }
-        else if (*it != ' ') {
+        } else if (*it != ' ') {
             prefix += *it;
             prefix += ' ';
         }
