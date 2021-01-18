@@ -4,7 +4,7 @@
 #include <iostream>
 
 std::string infix2postfix(std::string infix) {
-    std::unordered_map<char, int> priorities({ 
+    std::unordered_map<char, int> priorities({
             {'(', 0},
             {')', 1},
             {'+', 2},
@@ -35,22 +35,25 @@ std::string infix2postfix(std::string infix) {
                 continue;
             }
             char op;
-            while (!operators.isEmpty() && 
+            while (!operators.isEmpty() &&
                    priorities[operators.get()] >= priorities[*it]) {
                 prefix += operators.pop();
                 prefix += ' ';
             }
             operators.push(*it);
+        } else if (*it == '.') {
+            prefix += *it;
         } else if (*it != ' ') {
             prefix += *it;
             prefix += ' ';
         }
+        
     }
     while (!operators.isEmpty()) {
         prefix += operators.pop();
         prefix += ' ';
     }
-
+    prefix.pop_back();
     return prefix;
 }
 
