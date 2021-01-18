@@ -2,8 +2,8 @@
 
 #pragma once
 
-#include "../MyStack.h"
 #include <string>
 #include <unordered_map>
+#include "MyStack.h"
 
-std::string infix2prefix(std::string& infix);
+std::string infix2prefix(std::string infix);
